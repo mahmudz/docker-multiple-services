@@ -1,0 +1,18 @@
+version: "3.1"
+
+services: 
+  user_service:
+    build: ./user_service
+    hostname: user_service
+    volumes:
+      - "./user_service:/home/user_service/"
+    ports: 
+      - "3001:3001"
+  
+  product_service:
+    build: ./product_service
+    hostname: product_service
+    volumes:
+      - "./product_service:/home/product_service/"
+    ports: 
+      - "3002:3002"
